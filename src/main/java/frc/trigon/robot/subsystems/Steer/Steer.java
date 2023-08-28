@@ -32,6 +32,12 @@ public class Steer extends SubsystemBase {
         );
     }
 
+    /**
+     * Creates a command that sets the target angle of the steer.
+     *
+     * @param targetAngle the target angle of the steer
+     * @return the command
+     */
     public CommandBase getSetTargetAngleCommand(double targetAngle) {
         return new StartEndCommand(
                 () -> setTargetAngle(targetAngle),
@@ -40,11 +46,17 @@ public class Steer extends SubsystemBase {
         );
     }
 
-    public CommandBase getSetTargetAngleCommand(Supplier<Double> targetAngle) {
+    /**
+     * Creates a command that sets the target angle of the steer.
+     *
+     * @param targetAngleSupplier the supplier of the target angle of the steer
+     * @return the command
+     */
+    public CommandBase getSetTargetAngleCommand(Supplier<Double> targetAngleSupplier) {
         return new FunctionalCommand(
                 () -> {
                 },
-                () -> setTargetAngle(targetAngle.get()),
+                () -> setTargetAngle(targetAngleSupplier.get()),
                 (interrupted) -> stop(),
                 () -> false,
                 this
