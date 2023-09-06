@@ -18,8 +18,8 @@ public class DifferentialDriveConstants extends SubsystemBase {
     }
 
     private DifferentialDriveConstants() {
-
     }
+
     private static final int
             FRONT_RIGHT_MOTOR_ID = 0,
             BACK_RIGHT_MOTOR_ID = 1,
@@ -35,8 +35,10 @@ public class DifferentialDriveConstants extends SubsystemBase {
             FRONT_LEFT_MOTOR = new TalonFX(FRONT_LEFT_MOTOR_ID),
             BACK_LEFT_MOTOR = new TalonFX(BACK_LEFT_MOTOR_ID);
 
-    static final MotorControllerGroup LEFT_MOTOR_GROUP = new MotorControllerGroup(FRONT_LEFT_MOTOR,BACK_LEFT_MOTOR);
-    static final MotorControllerGroup RIGHT_MOTOR_GROUP = new MotorControllerGroup(FRONT_RIGHT_MOTOR,BACK_RIGHT_MOTOR);
+    static final MotorControllerGroup
+            LEFT_MOTOR_GROUP = new MotorControllerGroup(FRONT_LEFT_MOTOR,BACK_LEFT_MOTOR),
+            RIGHT_MOTOR_GROUP = new MotorControllerGroup(FRONT_RIGHT_MOTOR,BACK_RIGHT_MOTOR);
+
     static {
         TalonFXConfiguration configuration = new TalonFXConfiguration();
 
@@ -48,9 +50,6 @@ public class DifferentialDriveConstants extends SubsystemBase {
         FRONT_LEFT_MOTOR.getConfigurator().apply(configuration);
         BACK_RIGHT_MOTOR.getConfigurator().apply(configuration);
         FRONT_LEFT_MOTOR.getConfigurator().apply(configuration);
-
-
     }
-
 }
 
