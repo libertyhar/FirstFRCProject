@@ -22,10 +22,16 @@ public class Turret extends SubsystemBase {
         return INSTANCE;
     }
 
+    /**
+     * create command 
+     *
+     * @param hasTargetSupplier a supplier that returns whether there is a reflector visible
+     * @param positionSupplier  a supplier the position of the reflector
+     * @return
+     */
     public CommandBase getAlignToReflectorCommand(Supplier<Boolean> hasTargetSupplier, Supplier<Double> positionSupplier) {
         return new FunctionalCommand(
-                () -> {
-                },
+                () -> {},
                 () -> alignToReflector(hasTargetSupplier.get(), positionSupplier.get()),
                 (interrupted) -> stop(),
                 () -> false,

@@ -1,4 +1,4 @@
-package frc.trigon.robot.subsystems.Steer;
+package frc.trigon.robot.subsystems.steer;
 
 
 import com.ctre.phoenixpro.controls.PositionVoltage;
